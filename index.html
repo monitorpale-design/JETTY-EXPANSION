@@ -1,53 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>3D MONITORING JETTY EXPANSION</title>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <style>
-        /* Mengubah seluruh halaman menjadi hitam */
-        body { margin: 0; background-color: #000000; font-family: sans-serif; text-align: center; }
-        h1 { color: #ffffff; padding: 20px; }
-        
-        model-viewer { 
-            width: 100%; height: 70vh; 
-            background-color: #000000; /* Background model tetap hitam */
-            border-radius: 10px; 
-        }
-        .controls { margin-top: 20px; padding: 20px; background: #ffffff; display: inline-block; width: 80%; border-radius: 10px; }
-    </style>
-</head>
-<body>
-
-    <h1>3D MONITORING JETTY EXPANSION</h1>
-    
-    <model-viewer id="model" src="jetty.glb" alt="Jetty Model" 
-              camera-controls 
-              camera-fit
-              shadow-intensity="0"
-              exposure="1"
-              environment-image="none"
-              skybox-image="none"
-              tone-mapping="neutral"
-              camera-orbit="45deg 55deg auto"
-              min-camera-orbit="0deg 0deg 0.1m" 
-              max-camera-orbit="auto auto 200%"
-              zoom-sensitivity="0.3"> 
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<title>3D MONITORING JETTY EXPANSION</title>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<style>
+/* Mengubah seluruh halaman menjadi hitam */
+body { margin: 0; background-color: #000000; font-family: sans-serif; text-align: center; }
+h1 { color: #ffffff; padding: 20px; }
+model-viewer {
+width: 100%; height: 70vh;
+background-color: #000000; /* Background model tetap hitam */
+border-radius: 10px;
+}
+.controls { margin-top: 20px; padding: 20px; background: #ffffff; display: inline-block; width: 80%; border-radius: 10px; }
+</style></head><body>
+<h1>3D MONITORING JETTY EXPANSION</h1>
+<model-viewer id="model" src="jetty.glb" alt="Jetty Model"
+camera-controls
+shadow-intensity="1"
+interpolation-decay="200"
+interaction-prompt="none"
+field-of-view="45deg"
+touch-action="pan-y"
+exposure="1.5"
+camera-orbit="45deg 55deg auto"
+min-camera-orbit="0deg 0deg 0.1m"
+max-camera-orbit="auto auto 200%"
+zoom-sensitivity="0.3">
 </model-viewer>
-    
-    <div class="controls">
-        <label for="progress"><strong>Construction Progress Timeline:</strong></label><br><br>
-        <input type="range" id="progress" min="0" max="1" step="0.01" value="0" style="width: 100%;">
-    </div>
-    
-    <script>
-        const model = document.querySelector('#model');
-        const slider = document.querySelector('#progress');
-        slider.addEventListener('input', () => {
-            if (model.duration) {
-                model.currentTime = slider.value * model.duration;
-            }
-        });
-    </script>
-</body>
-</html>
+<div class="controls">
+<label for="progress"><strong>Construction Progress Timeline:</strong></label><br><br>
+<input type="range" id="progress" min="0" max="1" step="0.01" value="0" style="width: 100%;">
+</div>
+<script>
+const model = document.querySelector('#model');
+const slider = document.querySelector('#progress');
+slider.addEventListener('input', () => {
+if (model.duration) {
+model.currentTime = slider.value * model.duration;
+}
+});
+</script></body></html>
