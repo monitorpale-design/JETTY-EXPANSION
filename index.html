@@ -5,9 +5,16 @@
     <title>3D MONITORING JETTY EXPANSION</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
-        body { font-family: sans-serif; text-align: center; background-color: #f4f4f4; padding: 20px; }
-        model-viewer { width: 100%; height: 70vh; background-color: white; border-radius: 10px; }
-        .controls { margin-top: 20px; padding: 20px; background: white; display: inline-block; width: 80%; }
+        /* Mengubah seluruh halaman menjadi hitam */
+        body { margin: 0; background-color: #000000; font-family: sans-serif; text-align: center; }
+        h1 { color: #ffffff; padding: 20px; }
+        
+        model-viewer { 
+            width: 100%; height: 70vh; 
+            background-color: #000000; /* Background model tetap hitam */
+            border-radius: 10px; 
+        }
+        .controls { margin-top: 20px; padding: 20px; background: #ffffff; display: inline-block; width: 80%; border-radius: 10px; }
     </style>
 </head>
 <body>
@@ -15,19 +22,18 @@
     <h1>3D MONITORING JETTY EXPANSION</h1>
     
     <model-viewer id="model" src="jetty.glb" alt="Jetty Model" 
-              camera-controls 
-              shadow-intensity="1"
-              interpolation-decay="200"
-              interaction-prompt="none"
-              camera-orbit="45deg 55deg auto"
-              field-of-view="45deg"
-              touch-action="pan-y"
-              min-camera-orbit="auto" 
-              max-camera-orbit="auto"
-              zoom-sensitivity="0.3"
-              environment-image="neutral"
-              exposure="1.5">
-</model-viewer>
+                  camera-controls 
+                  shadow-intensity="1"
+                  interpolation-decay="200"
+                  interaction-prompt="none"
+                  field-of-view="45deg"
+                  touch-action="pan-y"
+                  exposure="1.5"
+                  camera-orbit="45deg 55deg auto"
+                  min-camera-orbit="0deg 0deg 0.1m" 
+                  max-camera-orbit="auto auto 200%"
+                  zoom-sensitivity="0.3">
+    </model-viewer>
     
     <div class="controls">
         <label for="progress"><strong>Construction Progress Timeline:</strong></label><br><br>
