@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Jetty 4D Progres</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        body { font-family: sans-serif; text-align: center; }
+        model-viewer { width: 100%; height: 60vh; margin: auto; }
+    </style>
+</head>
+<body>
+    <h1>Progres Konstruksi Dermaga</h1>
+    <model-viewer id="model" src="jetty.glb" camera-controls auto-rotate></model-viewer>
+    
+    <h3>Gunakan Slider untuk Animasi (Progres)</h3>
+    <input type="range" id="progress" min="0" max="1" step="0.01" value="0" style="width: 80%;">
+    
+    <script>
+        const model = document.querySelector('#model');
+        const slider = document.querySelector('#progress');
+        slider.addEventListener('input', () => {
+            model.currentTime = slider.value * model.duration;
+        });
+    </script>
+</body>
+</html>
