@@ -23,18 +23,16 @@
     
     <model-viewer id="model" src="jetty.glb" alt="Jetty Model" 
               camera-controls 
+              camera-fit
               shadow-intensity="0"
-              interpolation-decay="200"
-              interaction-prompt="none"
-              field-of-view="45deg"
-              touch-action="pan-y"
               exposure="1"
+              environment-image="none"
+              skybox-image="none"
+              tone-mapping="neutral"
               camera-orbit="45deg 55deg auto"
               min-camera-orbit="0deg 0deg 0.1m" 
               max-camera-orbit="auto auto 200%"
-              zoom-sensitivity="0.3"
-              environment-image="neutral"
-              tone-mapping="neutral">
+              zoom-sensitivity="0.3"> 
 </model-viewer>
     
     <div class="controls">
