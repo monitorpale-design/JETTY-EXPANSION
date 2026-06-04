@@ -5,35 +5,33 @@
     <title>3D MONITORING JETTY EXPANSION</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
-        body { margin: 0; background-color: #000; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
-        header { padding: 10px 0; color: #666; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; }
+        body { margin: 0; background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        h1 { font-size: 1.2rem; font-weight: 300; letter-spacing: 2px; margin: 20px 0; color: #aaa; text-transform: uppercase; }
         
         model-viewer { 
             width: 100%; height: 80vh; 
-            background-color: #000;
+            --model-viewer-environment-intensity: 0;
+            --model-viewer-exposure: 1;
         }
-        .controls { width: 90%; max-width: 600px; margin-top: 15px; }
-        input[type=range] { width: 100%; accent-color: #444; }
+        
+        .controls { 
+            width: 90%; max-width: 600px; margin-top: 10px; padding: 10px; 
+            background: rgba(255, 255, 255, 0.05); border-radius: 5px; 
+        }
+        input[type=range] { width: 100%; cursor: pointer; accent-color: #007bff; }
     </style>
 </head>
 <body>
 
-    <header>3D MONITORING JETTY EXPANSION</header>
+    <h1>3D MONITORING JETTY EXPANSION</h1>
     
     <model-viewer id="model" src="jetty.glb" alt="Jetty Model" 
-              camera-controls 
-              camera-fit
-              shadow-intensity="0"
-              interaction-prompt="none"
-              exposure="1"
-              environment-image="none"
-              skybox-image="none"
-              light-intensity="2"
-              camera-orbit="45deg 55deg auto"
-              min-camera-orbit="0deg 0deg 0.1m" 
-              max-camera-orbit="auto auto 200%"
-              zoom-sensitivity="0.3"> 
-</model-viewer>
+                  camera-controls shadow-intensity="0" interpolation-decay="200"
+                  interaction-prompt="none" field-of-view="45deg" touch-action="pan-y"
+                  exposure="1" camera-orbit="45deg 55deg auto"
+                  min-camera-orbit="0deg 0deg 0.1m" max-camera-orbit="auto auto 200%"
+                  zoom-sensitivity="0.3" environment-image="none"> 
+    </model-viewer>
     
     <div class="controls">
         <input type="range" id="progress" min="0" max="1" step="0.01" value="0">
