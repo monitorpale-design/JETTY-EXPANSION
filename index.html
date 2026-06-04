@@ -21,13 +21,19 @@
     <header>3D MONITORING JETTY EXPANSION</header>
     
     <model-viewer id="model" src="jetty.glb" alt="Jetty Model" 
-                  camera-controls 
-                  camera-fit
-                  shadow-intensity="0"
-                  interaction-prompt="none"
-                  exposure="1"
-                  environment-image="none"> 
-    </model-viewer>
+              camera-controls 
+              camera-fit
+              shadow-intensity="0"
+              interaction-prompt="none"
+              exposure="1"
+              environment-image="none"
+              skybox-image="none"
+              light-intensity="2"
+              camera-orbit="45deg 55deg auto"
+              min-camera-orbit="0deg 0deg 0.1m" 
+              max-camera-orbit="auto auto 200%"
+              zoom-sensitivity="0.3"> 
+</model-viewer>
     
     <div class="controls">
         <input type="range" id="progress" min="0" max="1" step="0.01" value="0">
