@@ -25,13 +25,17 @@
               camera-controls 
               shadow-intensity="0"
               exposure="1"
-              environment-image="none" 
-              skybox-image="none" 
+              environment-image="none"
+              skybox-image="none"
               tone-mapping="neutral"
               camera-orbit="45deg 55deg auto"
               min-camera-orbit="0deg 0deg 0.1m" 
               max-camera-orbit="auto auto 200%"
-              zoom-sensitivity="0.3"> 
+              zoom-sensitivity="0.3">
+              
+    <directional-light intensity="1.5" direction="0 1 0"></directional-light>
+    <ambient-light intensity="1.5"></ambient-light>
+    
 </model-viewer>
     
     <div class="controls">
